@@ -1,8 +1,7 @@
 ---
-- name: bootstrap all hosts
+- name: Test Connectivity
   hosts: all
-  become: yes
-  gather_facts: no
-
-  roles:
-    - role: robertdebock.bootstrap
+  gather_facts: true
+  tasks:
+    - name: test connection with ping
+      ping:
